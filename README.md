@@ -48,5 +48,79 @@
     </footer>
 
     <script src="script.js"></script>
-</body>
+</body>body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+header {
+    background: #333;
+    color: white;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+#hero {
+    background: url('football.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 50px 0;
+}
+
+.btn {
+    display: inline-block;
+    background: red;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+#news-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.news-item {
+    background: white;
+    margin: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+document.addEventListener("DOMContentLoaded", function () {
+    const newsContainer = document.getElementById("news-container");
+
+    // Simuler des actualités (tu pourras les récupérer depuis une API plus tard)
+    const news = [
+        { title: "Victoire du PSG en Ligue des Champions", content: "Le PSG s'impose 3-1 contre le Real Madrid." },
+        { title: "Messi de retour au Barça ?", content: "Des rumeurs indiquent un possible retour de Messi au FC Barcelone." },
+        { title: "Cristiano Ronaldo marque un triplé", content: "Le portugais continue de briller en Arabie Saoudite." }
+    ];
+
+    news.forEach(article => {
+        let div = document.createElement("div");
+        div.className = "news-item";
+        div.innerHTML = `<h3>${article.title}</h3><p>${article.content}</p>`;
+        newsContainer.appendChild(div);
+    });
+});
+
 </html>
